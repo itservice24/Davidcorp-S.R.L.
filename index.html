@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DavidCorp S.R.L.</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Recommended: Link Google Fonts here if not already imported in CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="davidcorp.p-e.kr">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPuJpGPK5sEiQW1scBJH_LxzELaR2E3ACKJMUTGR1AuB6b8ys0HzaYuDZk4GhBL4z1ut6b3kxVyObJips5pNsedvPsEQxjmcbws_S7xOxeRwxoq6OqonHC2LZsv4jBtE1TJmyBUiTi9k5ocfazOtQ=w438-h246-s-no-gm?authuser=0" alt="DavidCorp Logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="menu-mobile" class="menu-mobile">
+            <a href="javascript:void(0);" onclick="openTab('nosotros')">Nosotros</a>
+            <a href="javascript:void(0);" onclick="openTab('servicios')">Servicios</a>
+            <a href="javascript:void(0);" onclick="openTab('clientes')">Clientes</a>
+            <a href="javascript:void(0);" onclick="openTab('contacto')">Contacto</a>
+        </div>
+        <nav>
+            <a href="javascript:void(0);" onclick="openTab('nosotros')">Nosotros</a>
+            <a href="javascript:void(0);" onclick="openTab('servicios')">Servicios</a>
+            <a href="javascript:void(0);" onclick="openTab('clientes')">Clientes</a>
+            <a href="javascript:void(0);" onclick="openTab('contacto')">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Home -->
+        <section id="home" class="section active">
+            <div class="slideshow-container">
+                <div class="overlay">
+                    <h1>Bienvenido a DavidCorp S.R.L.</h1>
+                    <p>Innovación y calidad en cada proyecto.</p>
+                    <button onclick="openTab('servicios')">Ver Servicios</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="section">
+            <h2>Quiénes Somos</h2>
+            <p>Especializados en diseño, ingeniería, construcción de obras civiles, fabricación y montaje de estructuras metálicas.</p>
+            <div class="grid-list">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                    </div>
+                    <h3 class="card-title">Misión</h3>
+                    <p class="card-text">
+                        Brindar servicios de calidad ejecutando proyectos de acuerdo a los lineamientos establecidos en las normas y buenas practicas de ingeniería; con profesionales calificados que aportan valor agregado y hacen uso permanente de la innovación tecnológica en los procesos constructivos.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M15 15C24.4 5.7 39.6 5.7 49 15l63 63L112 40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 96c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l38.1 0L15 49C5.7 39.6 5.7 24.4 15 15zM133.5 243.9C158.6 193.6 222.7 112 320 112s161.4 81.6 186.5 131.9c3.8 7.6 3.8 16.5 0 24.2C481.4 318.4 417.3 400 320 400s-161.4-81.6-186.5-131.9c-3.8-7.6-3.8-16.5 0-24.2zM320 320a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM591 15c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-63 63 38.1 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-96c0-13.3 10.7-24 24-24s24 10.7 24 24l0 38.1 63-63zM15 497c-9.4-9.4-9.4-24.6 0-33.9l63-63L40 400c-13.3 0-24-10.7-24-24s10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 96c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-38.1L49 497c-9.4 9.4-24.6 9.4-33.9 0zm576 0l-63-63 0 38.1c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-96c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-38.1 0 63 63c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0z"/></svg>
+                    </div>
+                    <h3 class="card-title">Visión</h3>
+                    <p class="card-text">
+                        Ser una empresa líder en construcciones metálicas, reconocida por aplicar soluciones innovadoras, gestionar con eficiencia y calidad los proyectos de nuestros clientes.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M163.9 136.9c-29.4-29.8-29.4-78.2 0-108s77-29.8 106.4 0l17.7 18 17.7-18c29.4-29.8 77-29.8 106.4 0s29.4 78.2 0 108L310.5 240.1c-6.2 6.3-14.3 9.4-22.5 9.4s-16.3-3.1-22.5-9.4L163.9 136.9zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5L192 512 32 512c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l36.8 0 44.9-36c22.7-18.2 50.9-28 80-28l78.3 0 16 0 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l120.6 0 119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384c0 0 0 0 0 0l-.9 0c.3 0 .6 0 .9 0z"/></svg>
+                    </div>
+                    <h3 class="card-title">Valores</h3>
+                    <p class="card-text">
+                        Nuestro compromiso es brindar soluciones innovadoras con estándares de calidad y respeto al medio ambiente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="section">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos una amplia gama de servicios, desde la ingeniería hasta la ejecución de obras de gran envergadura.</p>
+            <div class="images-grid">
+                <div class="image-box">
+                    <h3>Diseño</h3>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczOXHhoeU5n6kBcbzgFEJ1ljloS3C6cOReim9ycuH9ARRKOx59Yu8YBIw9Jdp8gZGlaQsf9QyJKfP_x0TpBLarN7k6dievZ3iZHQ86Q5kojeTgH6siwCZV-D0dUpTddqmbR9hkekZdBwAk7HToT33g=w800-h600-s-no-gm?authuser=0" alt="Servicio 1">
+                    <p>Creamos soluciones de diseño innovadoras para cada proyecto. Nuestro equipo de ingenieros y arquitectos trabaja de la mano con los clientes para entender sus necesidades y transformar sus ideas en estructuras funcionales y estéticamente atractivas. Cada diseño que desarrollamos está alineado con los más altos estándares de calidad y seguridad, garantizando resultados duraderos y eficientes.</p>
+                </div>
+                <div class="image-box">
+                    <h3>Fabricación</h3>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczO2MG64Jm_NJP-_OIzCuojzmPE6oR7-lkrcnKgWU8eOOWoGuCti2KIov3V3n4wyiZrtMp70VaFGMEGa22mfR4i3Pozz7uGsWUgNVNozGFPMTrneBSHBbULFqzYT29XQoWKgIuB0YueQdy384w_BgA=w1032-h721-s-no-gm?authuser=0" alt="Servicio 2">
+                    <p>Contamos con la capacidad y experiencia para fabricar estructuras metálicas de alta calidad. En nuestra planta de producción, utilizamos tecnología de punta para asegurar que cada componente cumpla con rigurosos controles de calidad. Desde piezas personalizadas hasta grandes proyectos industriales, nos aseguramos de que nuestros productos sean precisos, resistentes y perfectamente adaptados a las especificaciones de cada cliente.</p>
+                </div>
+                <div class="image-box">
+                    <h3>Montaje</h3>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNfK8uGDv8OgJVaVMFB-C_TFD6GrS78NcgOOSXCtYKQb0GuG0oGSxDyFiP4jdVaIxl5dXNG3v9GXDJk5UMKCMVOL3GtT6oTyCIvO4820Duo0ZSBu3Iuh2evsmmgkVy1dEdx7zEFtFtmn9Ajm8rD_g=w1600-h721-s-no-gm?authuser=0" alt="Servicio 3">
+                    <p>Nuestro equipo de montaje está compuesto por profesionales altamente capacitados que se encargan de llevar a cabo cada proyecto con precisión y eficacia. Ya sea en plantas industriales, edificios comerciales o cualquier otro tipo de infraestructura, nos aseguramos de que todas las estructuras sean ensambladas de manera segura y en el tiempo establecido, siempre cumpliendo con las normativas vigentes de seguridad y calidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Clientes -->
+        <section id="clientes" class="section">
+            <h2>Nuestros Clientes</h2>
+            <p>Trabajamos con una amplia variedad de clientes en sectores industriales y comerciales.</p>
+            <div class="clients">
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPD3HPgvvcXhR3fj7xrJFLAZRLzRY-P0SfN9yTNg6qSS3qoI9dwHCoHqkZoYOq9kMVj3S6AsEyYv559aE9tZtLwHC_lAOCJYTycYQ8dKm3X8YKlHsiWxj_tvCDJkFCfTchUi5nRnoWI_wZIFnD4MQ=w326-h154-s-no-gm?authuser=0" alt="Celepsa">
+                </div>
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczOAAx8vnwxgqFQpm05Y76_Bk7aKlOT6QTEcXvmhW5NPd-Z3I_c8UliaTt6tJPGkRMTCYnQtY5PfXFp1MyJv4S9823op4rj4vLW0rc-cqRln-oGaodvzRKCVDwux7bKYKGzfsJUamf1HqEtdpAl0DQ=w395-h222-s-no-gm?authuser=0" alt="Electrozaña">
+                </div>
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMGeuMGWOoUdFRSq-U7b4iUYR5tLfVmOrFx2kaCHrn72R4H14sCmBr48M4fVLglYkBuFO6hYI-4WsZqrwY3HjkGkoAONqYh6-0An3tAoKnxNVobSD7t3tRTxSuNcG5R44teqz4ABMSRSjhZ8Nqrdw=w505-h284-s-no-gm?authuser=0" alt="Veproin">
+                </div>
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczP6PNfJopGPfAAvsaTbiSmRWAMQIzmd8MtPdfcSGZ0H5SpDl0GbgC7eEsCaPuDlg3o465R-hYWPx5o44LZGNQs9hZacb5R8O0QtnG6bapYdgZ6Vs5xKwqoXwgMET39pYCy4Nn9wXYHqcORvEX2RpA=w720-h400-s-no-gm?authuser=0" alt="Termodinamica">
+                </div>
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMlYLuNbM5HpIohZkrvZECxQQ8CAlCuB03hKGRVF3vzngfhbT4ya8cdg6uVzSLBPCgDMOcOKB5Wv4vBFTXnGWa5e8BVKyQmBol1mTsX9SZ3_YyAI6NBsBzH_cq_6VHB7Ytm-Z0MWmSRTh0P_sehQg=w300-h50-s-no-gm?authuser=0" alt="Brametsa">
+                </div>
+                <div class="client">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNQOBGgGV6ye2fgbRrzGUlDuTkmGVkD8J9ALGjvQ0ccQ4btdpbx5mjrmyYeAg3WE0KODH21K-oF8cJ_Zdh6qAKt8FiL0QgkhwLlTTNKRUuYBMTI-ysgyV7C4eXBitDR6dW0_A0q72NQ8UrlSKgf6g=w200-h200-s-no-gm?authuser=0" alt="Sinergia">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>Formulario de contacto estará aquí.</p>
+            <!-- You can add a contact form here later -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns-line"></div>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMHAzqqkgzCcLRcLwdgVHIbKm5L9S3HULVc8flykJNqjUJSOXTjKHKS2Y71rf87yjeC7esHu6k8NM4wENGItj42g5AxXU6L1v85Cz2YsqVuy_29-yumhA1IgoGlBBEHGCJWc8YVYZVIMIIuADghmg=w500-h356-s-no-gm?authuser=0" height="150" alt="DavidCorp S.R.L.">
+                <p>© 2025 Derechos reservados.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p>491 Jr. Sta Cruz de Pachacutec,</p>
+                <p>Los Olivos</p>
+                <p><a href="mailto:proyectos@davidcorp.p-e.kr">proyectos@davidcorp.p-e.kr</a></p>
+                <p><a href="https://wa.me/51936776570">(51) 936 776 570</a></p>
+                <div class="icon-container">
+                    <a href="https://www.linkedin.com/company/davidcorp/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Más de nosotros</h3>
+                <p><a href="https://linktr.ee/">Proyectos</a></p>
+                <p><a href="https://drive.google.com">Términos de uso</a></p>
+                <p><a href="https://drive.google.com">Política de privacidad</a></p>
+            </div>
+            <div class="footer-column newsletter">
+                <h3>Boletín</h3>
+                <p>Suscríbete a nuestro boletín para recibir nuestras noticias y ofertas.</p>
+                <form id="newsletter-form" action="https://formsubmit.co/20ccc32e425e5591a73ced14b1206c2d" method="POST" onsubmit="showThankYou(event)">
+                    <div class="email-container">
+                        <input type="email" name="email" placeholder="Dirección de correo electrónico" required>
+                        <button type="submit">Unirse</button>
+                    </div>
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+                <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; color: white;">
+                    <p>¡Gracias por suscribirte!</p>
+                </div>
+            </div>          
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file (defer ensures it runs after HTML is parsed) -->
+    <script src="script.js" defer></script>
+</body>
+</html>

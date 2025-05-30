@@ -1,0 +1,483 @@
+/* Estilos generales */
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto en gris oscuro */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Makes header sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1001; /* Ensure header is above other content but below mobile menu when active */
+}
+header img {
+    max-height: 125px;
+    margin-left: 20px; /* Added some margin for better spacing */
+}
+nav {
+    display: flex;
+    gap: 40px;
+    margin-right: 20px; /* Added some margin for better spacing */
+}
+nav a {
+    color: #004d73;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: lightgrey; /* Azul más claro para hover */
+}
+
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 5px;
+    background-color: #004d73;
+}
+
+/* Menú en pantalla pequeña */
+.menu-mobile {
+    display: none; /* Está oculto inicialmente */
+    position: fixed; /* Changed to fixed to overlay content */
+    top: 0; /* Align to the top of the viewport */
+    right: 0; /* Align to the right of the viewport */
+    height: 100vh; /* Full viewport height */
+    z-index: 1000; /* High z-index to be on top */
+    background-color: #ffffff;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
+    padding-top: 80px; /* Space for header or close button */
+    border-radius: 0; /* No border radius for full screen */
+    width: 250px; /* Ancho fijo para el menú */
+    transform: translateX(100%); /* Menú fuera de pantalla al principio */
+    transition: transform 0.3s ease-out; /* Transición suave */
+    text-align: center; /* Centra el texto */
+}
+
+/* Cuando se activa el menú */
+.menu-mobile.active {
+    transform: translateX(0); /* El menú se mueve a la posición visible */
+    display: block; /* Ensure it's visible */
+}
+
+/* Lista de enlaces en vertical */
+.menu-mobile a {
+    color: #004d73;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 15px; /* Increased padding */
+    display: block; /* Hace que cada enlace sea un bloque */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #eee; /* Separator line */
+}
+.menu-mobile a:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.menu-mobile a:hover {
+    background-color: lightgrey;
+}
+
+/* Estilos para el contenido de las secciones */
+.section {
+    text-align: center;
+    display: none; /* Sections are hidden by default */
+    padding: 60px 20px; /* Increased padding */
+    margin: 0 auto; /* No top/bottom margin as padding handles it */
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    /* border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */ /* Removed to make sections flow better */
+}
+
+/* Make home section take full width */
+#home {
+    max-width: none; /* Override max-width for home section */
+    padding: 0;      /* Override padding for home section */
+    background-color: transparent; /* No background for home section container */
+}
+
+
+.section.active { /* Specificity to ensure it overrides .section display:none */
+    display: block;
+}
+
+.section h2 {
+    color: #49738B;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem; /* Larger heading */
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 125px); /* Full height of viewport minus header height */
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 20px; */ /* Removed for full-width feel */
+    z-index: 1;
+    animation: slideshow 15s infinite linear;
+    display: flex; /* Added for overlay centering */
+    align-items: center; /* Added for overlay centering */
+    justify-content: center; /* Added for overlay centering */
+}
+/* Overlay for text and button */
+.overlay {
+    position: static; /* Changed from absolute as slideshow-container is now flex */
+    transform: none; /* Reset transform */
+    width: 80%; /* Control width of overlay content */
+    max-width: 800px; /* Max width for readability */
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Slight dark overlay */
+    padding: 40px;
+    border-radius: 10px; /* Keep radius for overlay */
+}
+.overlay h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+.overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Button styles */
+.overlay button {
+    background-color: #004d73;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px; /* Consistent radius */
+    transition: background 0.3s;
+}
+.overlay button:hover {
+    background-color: #49738B;
+}
+
+/* Slideshow animation */
+@keyframes slideshow {
+    0%, 100% { background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOK-A-AzcLvbnakhPozvlyoJZKVFxPd2Mj3XTL8kEdsFxIExqnGZjRrxYJYZpWiaJgC3Rmt-RzRFBatNH_DCtk98L6RSWzdLYO9Om8RFMmWkE1v8R4aSnZCI7ZPbgryd-4UpMVayep_uyH-tCSycck=w1654-h945-s-no-gm?authuser=0'); } /* Start with the last one for smooth loop */
+    25% { background-image: url('https://lh3.googleusercontent.com/pw/AP1GczNawrfPasbSLnyeOz8p9rzQ5Zpx-49H0LJqnXWGZPXZB63RRA3o17CHbp2CG4Y_bXmPWKYcAtcPaZ3rUAd-PgkecF2bgkdKnk72anIl4-6vLgQ36KhXL_Jc-gvdoIPsup2OcQNWxQM1Gc9fQAkiOQU=w1654-h945-s-no-gm?authuser=0'); }
+    50% { background-image: url('https://lh3.googleusercontent.com/pw/AP1GczORpB91qBVrA9f9x7c_g-8CBLVA_GscO6-BYMmNGmqoFZM_1CZnL-jN-APqIBsblgXHjdVpl2CwM3AJbvnZ19jWVfRwxSrVPyfc6hWvoCulhl88ctx9N698LFtd1CqRaOsUdBuuqZMHYpHw_-VMWW8=w1654-h945-s-no-gm?authuser=0'); }
+    75% { background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOM00jpJg969mBKStfdq8Asr-z_lHMomp-A-C8WEQLrQY-GuKkwIjO7RuOcDYjYkr_K2Cw82xp9R-FMs4nueTxunQYhOf1Zm6D4Zt1CvtgM5VTJWDjMUCSbftVWeAe5bkzwY7Te3qSP8_w9HF9NIpc=w1654-h945-s-no-gm?authuser=0'); }
+}
+
+/* Sección Quiénes Somos - Estilos */
+.about-card {
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 100%; /* Make cards in a row same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    color: #004d73; /* Changed icon color */
+    font-size: 2.5rem;
+    border-radius: 50%;
+    margin-inline: auto;
+    border: 2px solid #004d73; /* Added border to icon */
+    margin-bottom: 20px; /* Space below icon */
+}
+
+.about-card .card-title {
+    margin: 0 0 15px; /* Adjusted margin */
+    color: #004d73;
+    font-size: 1.5rem; /* Larger title */
+}
+
+.about-card .card-text {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1; /* Allows text to take available space */
+}
+        
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Increased gap */
+    margin-top: 40px;
+}
+
+/* Estilos para las imágenes en la sección de servicios */
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    text-align: left; /* Align text to left for better readability */
+}
+
+.image-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensure image radius is respected */
+    display: flex;
+    flex-direction: column;
+}
+
+.images-grid img {
+    width: 100%;
+    height: 250px; /* Increased height */
+    object-fit: cover;
+    /* border-radius: 10px 10px 0 0;  Only top corners rounded */
+    /* margin-bottom: 0;  Removed, padding on content instead */
+}
+
+.image-box h3 {
+    margin: 20px 20px 10px 20px; /* Padding around title */
+    color: #004d73;
+    font-size: 1.4rem; /* Larger subtitle */
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-box p {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 20px 20px 20px; /* Padding for text */
+    flex-grow: 1;
+}
+
+/* Clientes */
+.clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax */
+    gap: 20px;
+}
+.client {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Adjusted height for client logos */
+}
+
+.client img {
+    max-width: 80%; /* Limit logo size within the box */
+    max-height: 80%; /* Limit logo size within the box */
+    object-fit: contain;
+    /* border-radius: 10px; No radius for logos typically */
+}
+
+/* Modificación para la sección de Servicios (already styled mostly with .section) */
+#servicios {
+    /* padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+#servicios h2 {
+    /* color: #49738B;
+    text-align: center;
+    margin-bottom: 50px; */
+}
+
+/* Footer */
+footer {
+    background-color: #004d73;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px; /* Adjusted padding */
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Increased gap */
+    margin-top: 20px;
+    max-width: 1200px; /* Max width for footer content */
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-column {
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+.footer-column h3 {
+    color: white;
+    margin-bottom: 15px; /* Increased margin */
+    font-size: 1.3rem;
+}
+.footer-column p {
+    color: white;
+    margin: 10px 0; /* Increased margin */
+    text-align: left;
+    font-size: 0.95rem;
+}
+.footer-column img {
+    margin-bottom: 15px;
+}
+.icon-container a svg {
+    stroke: white; /* Make SVG icon white */
+    width: 28px;
+    height: 28px;
+}
+.icon-container a:hover svg {
+    stroke: #cccccc; /* Lighter on hover */
+}
+
+/* Estilos de la cuarta columna (newsletter) */
+.newsletter {
+    background-color: #003f5c; /* Slightly darker for contrast */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.newsletter .email-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* White background for the input group */
+    border-radius: 5px; /* Rounded corners for the group */
+    overflow: hidden; /* To make button join nicely */
+    border: 1px solid #003f5c; /* Border for the group */
+}
+
+.newsletter input[type="email"] {
+    flex-grow: 1; /* Input takes available space */
+    padding: 12px 15px; /* Better padding */
+    border: none;
+    outline: none;
+    border-radius: 0; /* No radius for input, group has it */
+    background-color: #ffffff; /* White background */
+    color: #333;
+    font-size: 1rem;
+}
+
+.newsletter button[type="submit"] {
+    width: auto; /* Adjust width based on text */
+    padding: 12px 20px; /* Better padding */
+    background-color: #004d73; /* Button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 0; /* No radius for button, group has it */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.newsletter button[type="submit"]:hover {
+    background-color: #003f5c; /* Darker hover for button */
+}
+
+/* Línea gris encima de las columnas */
+.footer-columns-line {
+    border-top: 1px solid #49738B; /* Subtler line */
+    margin-bottom: 30px; /* Increased margin */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    header img {
+        max-height: 80px; /* Smaller logo */
+        margin-left: 15px;
+    }
+    nav {
+        display: none; /* Oculta el menú normal */
+    }
+    .hamburger {
+        display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+        margin-right: 20px;
+    }
+
+    .slideshow-container {
+        height: calc(100vh - 80px); /* Adjust for smaller header */
+    }
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+    .overlay button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-columns {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        text-align: center; /* Center text in footer columns */
+    }
+    .footer-column {
+        text-align: center; /* Center text in footer columns */
+    }
+    .footer-column p, .footer-column h3, .footer-column img {
+        text-align: center; /* Center text in footer columns */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .icon-container {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-mobile {
+        width: 100%; /* Full width mobile menu */
+    }
+    .overlay {
+        padding: 20px;
+    }
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+}
