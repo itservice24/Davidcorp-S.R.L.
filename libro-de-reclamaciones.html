@@ -13,17 +13,30 @@
       background: #ffffff;
       color: #003344;
     }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .logo {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .logo img {
+      height: 70px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .empresa-info {
+      text-align: center;
+      font-size: 0.95rem;
       margin-bottom: 2rem;
     }
-    header img {
-      height: 50px;
-    }
-    header h1 {
-      font-size: 1.5rem;
+    .nota-legal {
+      background-color: #eef6fa;
+      border-left: 4px solid #004d73;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
     }
     form {
       max-width: 700px;
@@ -68,12 +81,23 @@
   </style>
 </head>
 <body>
-  <header>
+  <div class="logo">
     <a href="/">
       <img src="https://lh3.googleusercontent.com/pw/AP1GczPuJpGPK5sEiQW1scBJH_LxzELaR2E3ACKJMUTGR1AuB6b8ys0HzaYuDZk4GhBL4z1ut6b3kxVyObJips5pNsedvPsEQxjmcbws_S7xOxeRwxoq6OqonHC2LZsv4jBtE1TJmyBUiTi9k5ocfazOtQ=w438-h246-s-no-gm?authuser=0" alt="Logo">
     </a>
-    <h1>Libro de Reclamaciones Virtual</h1>
-  </header>
+  </div>
+
+  <h1>Libro de Reclamaciones Virtual</h1>
+  <div class="empresa-info">
+    <p><strong>Razón Social:</strong> DavidCorp S.R.L.<br>
+    <strong>RUC:</strong> 20602434011<br>
+    <strong>Dirección:</strong> 491 Jr. Sta Cruz de Pachacutec, Los Olivos<br>
+    <strong>Correo:</strong> info@davidcorp.p-e.kr</p>
+  </div>
+
+  <div class="nota-legal">
+    <strong>Nota:</strong> Este formulario constituye el Libro de Reclamaciones Virtual de acuerdo con el Decreto Supremo N.º 011-2011-PCM. Puedes registrar una queja o reclamo sobre nuestros servicios. Recibirás una respuesta en un plazo no mayor a 15 días hábiles.
+  </div>
 
   <form id="libroReclamos">
     <label for="nombre">Nombre completo:</label>
