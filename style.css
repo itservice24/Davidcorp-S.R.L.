@@ -444,49 +444,53 @@ footer a:hover {
 }
 
 /* Estilos de la cuarta columna (newsletter) */
-.newsletter {
-    width: 100%; /* Ensure it respects column boundaries */
-    padding: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
+.footer-column.newsletter {
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
-.newsletter .email-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid #003f5c;
-    box-sizing: border-box;
+.footer-column.newsletter form {
+  width: 100%;
 }
 
-.newsletter input[type="email"] {
-    flex: 1;
-    padding: 12px 15px;
-    border: none;
-    outline: none;
-    background-color: #ffffff;
-    color: #333;
-    font-size: 1rem;
-    box-sizing: border-box;
+.email-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #003f5c;
+  box-sizing: border-box;
 }
 
-.newsletter button[type="submit"] {
-    padding: 12px 20px;
-    background-color: #004d73;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    white-space: nowrap; /* Prevent text from wrapping */
+.email-container input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  box-sizing: border-box;
 }
 
-.newsletter button[type="submit"]:hover {
-    background-color: #003f5c;
+.email-container button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #004d73;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
 }
+
+.email-container button[type="submit"]:hover {
+  background-color: #003f5c;
+}
+
 
 
 /* Línea gris encima de las columnas */
