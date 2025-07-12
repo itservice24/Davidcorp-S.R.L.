@@ -443,6 +443,25 @@ footer a:hover {
     stroke: #cccccc; /* Lighter on hover */
 }
 
+.reclamos-link {
+  display: flex;
+  align-items: center;         /* Center vertically */
+  text-decoration: none;
+  color: inherit;
+}
+
+.reclamos-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.reclamos-text {
+  font-size: 16px;             /* Adjust as needed */
+  line-height: 1;              /* Prevent baseline issues */
+  display: inline-block;
+}
+
 /* Estilos de la cuarta columna (newsletter) */
 .footer-column.newsletter {
   width: 100%;
@@ -490,8 +509,6 @@ footer a:hover {
 .email-container button[type="submit"]:hover {
   background-color: #003f5c;
 }
-
-
 
 /* Línea gris encima de las columnas */
 .footer-columns-line {
