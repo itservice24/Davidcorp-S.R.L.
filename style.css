@@ -444,46 +444,51 @@ footer a:hover {
 }
 
 /* Estilos de la cuarta columna (newsletter) */
-.newsletter {
-    background-color: #003f5c; /* Slightly darker for contrast */
-    padding: 20px;
-    border-radius: 10px;
+.footer-column.newsletter {
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
-.newsletter .email-container {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff; /* White background for the input group */
-    border-radius: 5px; /* Rounded corners for the group */
-    overflow: hidden; /* To make button join nicely */
-    border: 1px solid #003f5c; /* Border for the group */
+.footer-column.newsletter form {
+  width: 100%;
 }
 
-.newsletter input[type="email"] {
-    flex-grow: 1; /* Input takes available space */
-    padding: 12px 15px; /* Better padding */
-    border: none;
-    outline: none;
-    border-radius: 0; /* No radius for input, group has it */
-    background-color: #ffffff; /* White background */
-    color: #333;
-    font-size: 1rem;
+.email-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #003f5c;
+  box-sizing: border-box;
 }
 
-.newsletter button[type="submit"] {
-    width: auto; /* Adjust width based on text */
-    padding: 12px 20px; /* Better padding */
-    background-color: #004d73; /* Button color */
-    color: #ffffff;
-    border: none;
-    border-radius: 0; /* No radius for button, group has it */
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+.email-container input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  box-sizing: border-box;
 }
 
-.newsletter button[type="submit"]:hover {
-    background-color: #003f5c; /* Darker hover for button */
+.email-container button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #004d73;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.email-container button[type="submit"]:hover {
+  background-color: #003f5c;
 }
 
 /* Línea gris encima de las columnas */
