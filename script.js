@@ -103,6 +103,14 @@ function showThankYou(event) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const mensajeGracias = document.getElementById('gracias');
+  if (window.location.hash === "#gracias") {
+    mensajeGracias.style.display = "block";
+  }
+});
+
+
 // Initialize the first tab (e.g., 'home') to be active when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     // Check if there's a hash in the URL (e.g., index.html#nosotros)
@@ -116,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homeSection.classList.add('active');
         }
     }
+
 
     // Add smooth scrolling for internal links if desired (and not using openTab for all)
     // document.querySelectorAll('a[href^="#"]').forEach(anchor => {

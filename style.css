@@ -316,6 +316,70 @@ nav a:hover {
     margin-bottom: 50px; */
 }
 
+
+.contacto {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacto h2 {
+  color: #004d73;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #004d73;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #004d73;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background-color: #003652;
+}
+
+.mensaje-gracias {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #d1f0dc;
+  color: #003d2e;
+  border-left: 5px solid #2eb85c;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Footer */
 footer {
     background-color: #004d73;
