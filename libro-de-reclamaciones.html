@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/libro-de-reclamaciones.jpg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -78,6 +79,10 @@
       text-align: center;
       border-radius: 5px;
     }
+    #descargarPDF {
+      display: none;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -133,13 +138,13 @@
     <input type="hidden" name="_subject" value="Nuevo Reclamo desde el Libro Virtual">
     <input type="hidden" name="_template" value="box">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_autoresponse" value="Gracias por registrar tu reclamo. DavidCorp S.R.L. te responderá en un plazo no mayor a 15 días hábiles.">
 
     <button type="submit">Enviar Reclamo</button>
 
     <div class="confirmacion" id="mensajeExito">
       ✅ Reclamo registrado correctamente. Guarda este código: <strong id="codigoRegistro"></strong>
     </div>
+    <button id="descargarPDF">📄 Descargar copia del reclamo (PDF)</button>
   </form>
 
   <script>
@@ -149,6 +154,7 @@
       const codigo = 'R-' + new Date().toISOString().slice(0,10).replace(/-/g, '') + '-' + Math.random().toString(36).substr(2, 4).toUpperCase();
       document.getElementById('codigoRegistro').innerText = codigo;
       document.getElementById('mensajeExito').style.display = 'block';
+      document.getElementById('descargarPDF').style.display = 'inline-block';
 
       const formData = new FormData(form);
       formData.append('Código de Reclamo', codigo);
@@ -171,6 +177,31 @@
         console.error(error);
         alert("Error en el sistema. Intenta nuevamente más tarde.");
       });
+    });
+
+    document.getElementById('descargarPDF').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const codigo = document.getElementById('codigoRegistro').innerText;
+
+      const datos = `
+Libro de Reclamaciones - DavidCorp S.R.L.
+Código de reclamo: ${codigo}
+Fecha: ${new Date().toLocaleString()}
+
+Nombre: ${document.getElementById('nombre').value}
+DNI: ${document.getElementById('dni').value}
+Dirección: ${document.getElementById('direccion').value}
+Teléfono: ${document.getElementById('telefono').value}
+Correo: ${document.getElementById('correo').value}
+Servicio: ${document.getElementById('producto').value}
+Tipo: ${document.getElementById('tipo').value}
+Detalle: ${document.getElementById('detalle').value}
+Pedido: ${document.getElementById('pedido').value}
+`;
+
+      doc.text(datos, 10, 10);
+      doc.save(`Reclamo-${codigo}.pdf`);
     });
   </script>
 </body>
