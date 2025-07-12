@@ -443,24 +443,31 @@ footer a:hover {
     stroke: #cccccc; /* Lighter on hover */
 }
 
+/* Estilos del libro de reclamaciones*/
 .reclamos-link {
-  display: flex;
-  align-items: center;         /* Center vertically */
   text-decoration: none;
   color: inherit;
 }
 
-.reclamos-icon {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+.reclamos-wrapper {
+  display: inline-flex;
+  align-items: center;
 }
 
-.reclamos-text {
-  font-size: 16px;             /* Adjust as needed */
-  line-height: 1;              /* Prevent baseline issues */
-  display: inline-block;
+.reclamos-wrapper img {
+  width: 50px;
+  height: 50px;
+  display: block;
 }
+
+.reclamos-wrapper span {
+  font-size: 16px;
+  margin-left: 10px;
+  line-height: 1;
+  position: relative;
+  top: 1px; /* adjust if needed for perfect alignment */
+}
+
 
 /* Estilos de la cuarta columna (newsletter) */
 .footer-column.newsletter {
