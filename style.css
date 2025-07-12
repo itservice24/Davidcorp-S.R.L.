@@ -380,6 +380,17 @@ nav a:hover {
   text-align: center;
 }
 
+.legal-aviso {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  margin-top: 1rem;
+}
+.legal-aviso a {
+  color: #004d73;
+  text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: #004d73;
