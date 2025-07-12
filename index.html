@@ -134,32 +134,29 @@
         <!-- Sección Contacto -->
         <section id="contacto" class="section">
             <h2>Contáctanos</h2>
-            <form action="https://formsubmit.co/info@davidcorp.p-e.kr" method="POST" class="contact-form" id="formulario">
-      <!-- Anti-spam y configuraciones -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
-      <input type="hidden" name="_template" value="box">
-      <input type="hidden" name="_next" value="https://www.davidcorp.p-e.kr/#gracias">
-      <input type="text" name="_honey" style="display:none">
+            <form id="formulario" class="contact-form">
+    <!-- Hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
+    <input type="hidden" name="_template" value="box">
 
-      <!-- Campos -->
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+    <!-- Visible fields -->
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
 
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+    <label for="message">Mensaje:</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
 
-      <button type="submit">Enviar mensaje</button>
-    </form>
+    <button type="submit">Enviar mensaje</button>
+  </form>
 
-    <!-- Mensaje de gracias -->
-    <div id="gracias" class="mensaje-gracias" style="display:none;">
-      <p>✅ ¡Gracias por tu mensaje! Te responderemos pronto.</p>
-    </div>
-        </section>
+  <div id="gracias" class="mensaje-gracias" style="display:none;">
+    <p>✅ ¡Gracias por tu mensaje! Te responderemos pronto.</p>
+  </div>
+</section>
     </main>
 
     <footer>

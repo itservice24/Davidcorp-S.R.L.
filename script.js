@@ -104,10 +104,34 @@ function showThankYou(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('formulario');
   const mensajeGracias = document.getElementById('gracias');
-  if (window.location.hash === "#gracias") {
-    mensajeGracias.style.display = "block";
-  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Don't reload the page
+
+    const datos = new FormData(form);
+
+    fetch('https://formsubmit.co/ajax/info@davidcorp.p-e.kr', {
+      method: 'POST',
+      body: datos,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset(); // Clear form
+        mensajeGracias.style.display = 'block'; // Show success message
+      } else {
+        alert("Hubo un error al enviar. Intenta nuevamente.");
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert("Error al enviar el mensaje.");
+    });
+  });
 });
 
 
