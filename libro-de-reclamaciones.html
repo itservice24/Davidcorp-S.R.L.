@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Libro de Reclamaciones | DavidCorp S.R.L.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/badges/libro-de-reclamaciones.jpg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding: 0;
+      background: #ffffff;
+      color: #122642;
+    }
+    .logo {
+      text-align: center;
+      background: #122642;
+      margin-bottom: 1rem;
+      padding: 0px; /* Increase vertical space inside the box */
+    }
+
+    .logo img {
+      height: 160px;
+    }
+
+    h1 {
+      color:#4a7287;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .empresa-info {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+    .nota-legal {
+      max-width:600px;
+      margin: 0 auto;
+      background-color: #eef6fa;
+      border-left: 6px solid #122642;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    form {
+      color: #6194cd;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: #f4f4f4;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    input, textarea, select, option {
+      padding: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      font-size: 1rem;
+      background-color: #122642;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width:auto;
+    }
+    button:hover {
+      background-color: #003951;
+    }
+    .confirmacion {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #d1f0dc;
+      border-left: 4px solid #2eb85c;
+      display: none;
+      text-align: center;
+      border-radius: 5px;
+    }
+    #descargarPDF {
+      display: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <a href="/">
+      <img src="assets/logos/sq-dark.png" alt="Logo">
+    </a>
+  </div>
+
+  <h1>Libro de Reclamaciones Virtual</h1>
+  <div class="empresa-info">
+    <p><strong>Razón Social:</strong> David Corporation S.R.L.<br>
+    <strong>RUC:</strong> 20602434011<br>
+    <strong>Dirección:</strong> 491 Jr. Sta Cruz de Pachacutec, Los Olivos<br>
+    <strong>Correo:</strong> info@davidcorp.p-e.kr</p>
+  </div>
+
+  <div class="nota-legal">
+    <strong>Nota:</strong> Este formulario constituye el Libro de Reclamaciones Virtual de acuerdo con el Decreto Supremo N.º 011-2011-PCM. Puedes registrar una queja o reclamo sobre nuestros servicios. Recibirás una respuesta en un plazo no mayor a 15 días hábiles.
+  </div>
+
+  <form id="libroReclamos">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" inputmode="numeric" required>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" maxlength="9" inputmode="numeric" name="telefono">
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="producto">Servicio relacionado:</label>
+    <input type="text" id="producto" name="producto" required>
+
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" name="tipo" required>
+      <option value="reclamo">Reclamo</option>
+      <option value="queja">Queja</option>
+    </select>
+
+    <label for="detalle">Detalle del reclamo o queja:</label>
+    <textarea id="detalle" name="detalle" rows="4" required></textarea>
+
+    <label for="pedido">Pedido del consumidor:</label>
+    <textarea id="pedido" name="pedido" rows="3" required></textarea>
+
+    <input type="hidden" name="_subject" value="Nuevo Reclamo desde el Libro Virtual">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Enviar Reclamo</button>
+
+    <div class="confirmacion" id="mensajeExito">
+      ✅ Reclamo registrado correctamente. Guarda este código: <strong id="codigoRegistro"></strong>
+    </div>
+    <button id="descargarPDF">📄 Descargar copia del reclamo (PDF)</button>
+  </form>
+
+  <script>
+    const input = document.getElementById("telefono");
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/[^0-9]/g, ''); // Remove all non-digits
+  });
+
+    document.getElementById("dni").addEventListener("input", function () {
+      this.value = this.value.replace(/[^0-9]/g, '');
+  });
+  
+
+    document.getElementById('libroReclamos').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const codigo = 'R-' + new Date().toISOString().slice(0,10).replace(/-/g, '') + '-' + Math.random().toString(36).substr(2, 4).toUpperCase();
+      document.getElementById('codigoRegistro').innerText = codigo;
+      document.getElementById('mensajeExito').style.display = 'block';
+      document.getElementById('descargarPDF').style.display = 'inline-block';
+
+      const formData = new FormData(form);
+      formData.append('Código de Reclamo', codigo);
+
+      fetch('https://formsubmit.co/ajax/info@davidcorp.p-e.kr', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+        } else {
+          alert("Error al enviar el formulario. Intenta nuevamente.");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Error en el sistema. Intenta nuevamente más tarde.");
+      });
+    });
+
+    document.getElementById('descargarPDF').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const codigo = document.getElementById('codigoRegistro').innerText;
+
+      const datos = `
+Libro de Reclamaciones - DavidCorp S.R.L.
+Código de reclamo: ${codigo}
+Fecha: ${new Date().toLocaleString()}
+
+Nombre: ${document.getElementById('nombre').value}
+DNI: ${document.getElementById('dni').value}
+Dirección: ${document.getElementById('direccion').value}
+Teléfono: ${document.getElementById('telefono').value}
+Correo: ${document.getElementById('correo').value}
+Servicio: ${document.getElementById('producto').value}
+Tipo: ${document.getElementById('tipo').value}
+Detalle: ${document.getElementById('detalle').value}
+Pedido: ${document.getElementById('pedido').value}
+`;
+
+      doc.text(datos, 10, 10);
+      doc.save(`Reclamo-${codigo}.pdf`);
+    });
+  </script>
+</body>
+</html>

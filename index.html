@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="DavidCorp s.r.l.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczPuJpGPK5sEiQW1scBJH_LxzELaR2E3ACKJMUTGR1AuB6b8ys0HzaYuDZk4GhBL4z1ut6b3kxVyObJips5pNsedvPsEQxjmcbws_S7xOxeRwxoq6OqonHC2LZsv4jBtE1TJmyBUiTi9k5ocfazOtQ=w438-h246-s-no-gm?authuser=0">
+    <title>DavidCorp s.r.l.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="assets/logos/main.png" alt="Logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="menu-mobile" class="menu-mobile">
+            <a href="#nosotros" onclick="openTab('nosotros')">Nosotros</a>
+            <a href="#servicios" onclick="openTab('servicios')">Servicios</a>
+            <a href="#clientes" onclick="openTab('clientes')">Clientes</a>
+            <a href="#contáctanos" onclick="openTab('contáctanos')">Contáctanos</a>
+        </div>
+        <nav>
+            <a href="#nosotros" onclick="openTab('nosotros')">Nosotros</a>
+            <a href="#servicios" onclick="openTab('servicios')">Servicios</a>
+            <a href="#clientes" onclick="openTab('clientes')">Clientes</a>
+            <a href="#contáctanos" onclick="openTab('contáctanos')">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Home -->
+        <section id="home" class="section active">
+            <div class="slideshow-container">
+                <div class="overlay">
+                    <h1>Bienvenido a DavidCorp</h1>
+                    <p>Nos esforzamos por superar las expectativas de nuestros clientes y establecer estándares de excelencia en la industria.</p>
+                    <button onclick="openTab('servicios')">Nuestros Servicios</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="section">
+            <h2>Quiénes Somos</h2>
+            <p><span>DavidCorp</span> es una empresa líder en Perú, especializada en diseño, ingeniería, construcción de obras civiles y soluciones integrales para el sector industrial.</p>
+            <div class="grid-list">
+                <div class="about-card">
+                    <div class="card-icon">
+                       <img src="assets/icons/Mision.png" alt="Mision Icon">
+                    </div>
+                    <h3 class="card-title">Misión</h3>
+                    <h4 class="card-subtitle">Soluciones Inteligentes</h4>
+                    <p class="card-text">
+                        Ofrecer soluciones innovadoras de calidad, garantizando la seguridad, eficiencia y durabilidad en cada proyecto. Estableciendo relaciones sólidas con nuestros clientes como su socio de confianza.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <img src="assets/icons/Vision.png" alt="Vision Icon">
+                    </div>
+                    <h3 class="card-title">Visión</h3>
+                    <h4 class="card-subtitle">Opción #1</h4>
+                    <p class="card-text">
+                        Aspiramos a ser reconocidos como líderes en la industria de proyectos industriales en Perú y a nivel internacional. Destacándonos por nuestra excelencia técnica, innovación constante y compromiso con la calidad y la satisfacción de clientes.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <img src="assets/icons/Valores.png" alt="Valores Icon">
+                    </div>
+                    <h3 class="card-title">Valores</h3>
+                    <h4 class="card-subtitle">Excelencia Total</h4>
+                    <p class="card-text">
+                       En DavidCorp, te ayudamos a generar valor a nuestros clientes a través de soluciones personalizadas y estamos comprometidos a garantizar:
+                    </p>
+                       <ul class="card-list">
+                        <li>INNOVACIÓN</li>                    
+                        <li>CALIDAD</li>
+                        <li>EFICIENCIA</li>
+                        <LI>PRECISIÓN</LI>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="section">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos una amplia gama de servicios, desde la ingeniería hasta la ejecución de obras de gran envergadura.</p>
+            <div class="images-grid">
+                <div class="image-box">
+                    <h3>Diseño e Ingeniería</h3>
+                    <img src="assets/servicios/1.png" alt="Servicio 1">
+                    <ul class="description">
+                        <li>Elaboración de planos técnicos y de construcción.</li>
+                        <li>Modelado en 3D y renderización de proyectos.</li>
+                        <li>Análisis estructural mediante software especializado.</li>
+                        <li>Ingeniería de valor para optimizar costos y recursos.</li>                    </ul>
+                </div>
+                <div class="image-box">
+                    <h3>Fabricación y Montaje Industrial</h3>
+                    <img src="assets/servicios/2.png" alt="Servicio 2">
+                    <ul class="description">
+                        <li>Fabricaciones Metálicas</li>
+                    </ul>
+                </div>
+                <div class="image-box">
+                    <h3>Mantenimiento y Acabados Industriales</h3>
+                    <img src="assets/servicios/3.png" alt="Servicio 3">
+                    <ul class="description">
+                        <li>Inspección y evaluación de estructuras metálicas.</li>
+                        <li>Refuerzo/sustitución de elementos estructurales defectuosos.</li>
+                        <li>Programas de mantenimiento preventivo.</li>
+                        <li>Soluciones Integrales de Pintura Industrial</li>
+                    </ul>
+                </div>
+                <div class="image-box">
+                    <h3>Consultoría y Asesoramiento</h3>
+                    <img src="assets/servicios/4.png" alt="Servicio 4">
+                    <ul class="description">
+                        <li>Asesoramiento técnico en la selección de materiales.</li>
+                        <li>Consultoría en normativas y regulaciones de construcción.</li>
+                        <li>Evaluación de factibilidad técnica y económica de proyectos.</li>
+                        <li>Apoyo en la planificación y gestión de proyectos.</li>
+                        <li>Soporte técnico durante todas las etapas del proyecto.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Clientes -->
+        <section id="clientes" class="section">
+            <h2>Nuestros Clientes</h2>
+            <p>Trabajamos con una amplia variedad de clientes en sectores industriales y comerciales.</p>
+            <div class="clients">
+                <div class="client">
+                    <img src="assets/clientes/Celepsa.png" alt="Celepsa">
+                </div>
+                <div class="client">
+                    <img src="assets/clientes/Electrozaña.png" alt="Electrozaña">
+                </div>
+                <div class="client">
+                    <img src="assets/clientes/Veproin.png" alt="Veproin">
+                </div>
+                <div class="client">
+                    <img src="assets/clientes/Termodinamica.png" alt="Termodinamica">
+                </div>
+                <div class="client">
+                    <img src="assets/clientes/Brametsa.png" alt="Brametsa">
+                </div>
+                <div class="client">
+                    <img src="assets/clientes/Sinergia.png" alt="Sinergia">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contáctanos" class="section">
+            <h2>Contáctanos</h2>
+            <form id="formulario" class="contact-form">
+    <!-- Hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
+    <input type="hidden" name="_template" value="box">
+
+    <!-- Visible fields -->
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+
+    <label for="message">Mensaje:</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+
+    <button type="submit">Enviar mensaje</button>
+    <p class="legal-aviso">
+  Al enviar este formulario, aceptas el uso de tus datos para fines de contacto profesional según nuestra <a href="privacidad.html">Política de Privacidad</a>.
+</p>
+
+  </form>
+
+  <div id="gracias" class="mensaje-gracias" style="display:none;">
+    <p>✅ ¡Gracias por tu mensaje! Te responderemos pronto.</p>
+  </div>
+</section>
+    </main>
+
+    <footer>
+        <div class="footer-column-line"></div>
+        <div class="footer-column">
+            <div class="footer-column-logo">
+                <img src="assets/logos/sq-dark-sl.png" alt="DavidCorp S.R.L.">
+                <p>© 2025 Derechos Reservados.</p>
+            </div>
+            <div class="footer-column-contacto">
+                <h3>Contacto</h3>
+                <p>491 Jr. Sta Cruz de Pachacutec,</p>
+                <p>Los Olivos</p>
+                <p><a href="mailto:proyectos@davidcorp.p-e.kr">proyectos@davidcorp.p-e.kr</a></p>
+                <p><a href="https://wa.me/51936776570">(51) 936 776 570</a></p>
+                <a href="https://www.linkedin.com/company/davidcorp/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
+                </a>
+            </div>
+            <div class="footer-column-nosotros">
+                <h3>Más de nosotros</h3>
+                <p><a href="privacidad.html">Política de privacidad</a></p>
+                <div class="reclamos-wrapper">
+                    <a href="libro-de-reclamaciones.html" class="reclamos-link">
+                        <img src="assets/badges/libro-de-reclamaciones.jpg" alt="Libro de Reclamaciones">
+                        <span>Libro de Reclamaciones</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column-newsletter">
+                <h3>Boletín</h3>
+                <p>Suscríbete a nuestro boletín para recibir nuestras noticias y ofertas.</p>
+                <form id="newsletter-form" action="https://formsubmit.co/info@davidcorp.p-e.kr" method="POST" onsubmit="showThankYou(event)">
+                    <div class="email-container">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <button type="submit">Enviar</button>
+                    </div>
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+                <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; color: #004d73;">
+                    <p>¡Gracias por suscribirte!</p>
+                </div>
+            </div>          
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file (defer ensures it runs after HTML is parsed) -->
+    <script src="script.js" defer></script>
+</body>
+</html>
